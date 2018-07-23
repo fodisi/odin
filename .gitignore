@@ -1,19 +1,31 @@
-# Downloaded files for web-scrappers
+# Downloaded files from web-scrappers
 *.csv.gz*
+*.csv.tar*
+*.csv.zip*
 *.csv
-bitcoin/
-.vscode/
-vscode/
 *.zip
 *.tar
-.idea
-.idea/
+download/
+.download/
+download
+downloads
+downloads/
+.downloads
+
+#VSCode
+.vscode/
+vscode/
+
+# Images
 .jpeg
 .jpg
 .bmp
 .svg
 .gif
 
+# Others
+.idea
+.idea/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
