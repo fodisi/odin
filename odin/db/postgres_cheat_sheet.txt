@@ -1,0 +1,29 @@
+# service postgresql status
+
+
+# psql commands
+# \du >> lists all roles
+# \dt >> list tables
+# \dn >> list database schemas (need to be connected to db)
+# \quit >> quit psql
+# (/etc/postgresql/10/main/pg_hba.conf) >> connection config file
+# select schema_name from information_schema.schemata; >> list schemas in postgres
+# \? >> help... 
+
+
+       kill PATTERN...
+           Send a signal to one or more processes of the unit. Use --kill-who=
+           to select which process to kill. Use --signal= to select the signal
+           to send.
+
+       is-active PATTERN...
+           Check whether any of the specified units are active (i.e. running).
+           Returns an exit code 0 if at least one is active, or non-zero
+           otherwise. Unless --quiet is specified, this will also print the
+           current unit state to standard output.
+
+       is-failed PATTERN...
+           Check whether any of the specified units are in a "failed" state.
+           Returns an exit code 0 if at least one has failed, non-zero
+           otherwise. Unless --quiet is specified, this will also print the
+           current unit state to standard output.
