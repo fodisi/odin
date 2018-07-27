@@ -1,0 +1,41 @@
+--psql -U username -d myDataBase -a -f myInsertFile
+CREATE TABLE IF NOT EXISTS catalog.exchanges (
+  code varchar(32) NOT NULL,
+  name varchar(255) NOT NULL,
+  city varchar(255),
+  country varchar(255),
+  currency varchar(64),
+  timezone_offset time,
+  created_date timestamptz NOT NULL,
+  updated_date timestamptz NOT NULL,
+  PRIMARY KEY (code)
+);
+
+CREATE TABLE IF NOT EXISTS catalog.data_vendors (
+  id serial NOT NULL,
+  name varchar(255) NOT NULL,
+  website_url varchar(255),
+  support_email varchar(255),
+  api_key varchar(255),
+  created_date timestamptz NOT NULL,
+  updated_date timestamptz NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS catalog.symbols (
+  id serial NOT NULL,
+  exchange_code varchar(32) NOT NULL REFERENCES catalog.exchanges (code),
+  ticker varchar(32) NOT NULL,
+  instrument varchar(64) NOT NULL,
+  name varchar(255),
+  sector varchar(255),
+  industry varchar(255),
+  summary_quote varchar(500),
+  website varchar(500),
+  currency varchar(32) NULL,
+  created_date timestamptz NOT NULL,
+  updated_date timestamptz NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE INDEX symbol_ticker_idx ON catalog.symbols ((lower(ticker)));
