@@ -12,6 +12,10 @@ downloads
 downloads/
 .downloads
 
+#configuration files
+*.json
+*.config
+
 #VSCode
 .vscode/
 vscode/
